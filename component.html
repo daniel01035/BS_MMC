@@ -1,0 +1,21 @@
+<hello name="{{ name }}"></hello>
+<h1>red</h1>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<input type="text" [(ngModel)] = 'keyword' />
+
+<p>輸入文字： {{keyword}}</p>
+<p>文字長度：{{keyword.length}} 個字元</p>
+
+<button (click)="reset()">reset</button>
+
+<ul>
+  <li *ngFor="let item of todoItems">
+    <label htmlFor="chk_{{item.id}}">
+      <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="itemClick(item)"> {{ item.value }}
+    </label>
+    <span *ngIf="item.done">(已完成)</span>
+    </li>
+</ul>
